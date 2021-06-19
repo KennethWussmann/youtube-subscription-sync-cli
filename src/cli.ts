@@ -1,4 +1,4 @@
-#!/bin/user/env node
+#!/usr/bin/env node
 import fetch from "node-fetch";
 import inquirer from "inquirer";
 import fs from "fs";
@@ -146,8 +146,7 @@ const getAllSubscriptions = async (
   let subscriptions: SubscriptionSnippet[] = [];
   do {
     const response = await fetch(
-      `https://youtube.googleapis.com/youtube/v3/subscriptions?part=id,snippet&maxResults=50&mine=true${
-        nextPage ? `&pageToken=${nextPage}` : ""
+      `https://youtube.googleapis.com/youtube/v3/subscriptions?part=id,snippet&maxResults=50&mine=true${nextPage ? `&pageToken=${nextPage}` : ""
       }`,
       {
         method: "GET",
