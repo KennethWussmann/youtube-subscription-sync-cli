@@ -1,0 +1,34 @@
+{
+  "name": "youtube-subscription-sync-cli",
+  "version": "0.1.0",
+  "main": "src/cli.ts",
+  "repository": "git@github.com:KennethWussmann/youtube-subscription-sync-cli.git",
+  "author": "Kenneth Wußmann",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node src/cli.ts",
+    "format": "yarn prettier . --write",
+    "build": "ncc build"
+  },
+  "dependencies": {
+    "enquirer": "^2.3.6",
+    "inquirer": "^8.1.1",
+    "koa": "^2.13.1",
+    "koa-router": "^10.0.0",
+    "node-fetch": "^2.6.1",
+    "open": "^8.2.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^7.3.1",
+    "@types/koa": "^2.13.3",
+    "@types/koa-router": "^7.4.2",
+    "@types/node": "^15.12.4",
+    "@types/node-fetch": "^2.5.10",
+    "@types/uuid": "^8.3.0",
+    "@vercel/ncc": "^0.28.6",
+    "prettier": "^2.3.1",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.4"
+  }
+}
