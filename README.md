@@ -20,3 +20,10 @@ Now you'll have to login with your destination YouTube channel. The tool will th
 2. [Install NodeJS](https://nodejs.org/)
 3. Run this CLI `npx youtube-subscription-sync-cli`
 4. That's it. You'll be guided through the process.
+
+## Troubleshooting
+
+In case `npx youtube-subscription-sync-cli` didn't work, you can still install and run it manually:
+
+1. `npm i -g youtube-subscription-sync-cli`
+2. `ytss`
