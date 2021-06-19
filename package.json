@@ -1,17 +1,25 @@
 {
   "name": "youtube-subscription-sync-cli",
-  "version": "0.1.0",
-  "main": "src/cli.ts",
+  "version": "0.1.1",
+  "main": "./bin/index.js",
   "repository": "git@github.com:KennethWussmann/youtube-subscription-sync-cli.git",
+  "homepage": "https://github.com/KennethWussmann/youtube-subscription-sync-cli",
+  "bugs": {
+    "url": "https://github.com/KennethWussmann/youtube-subscription-sync-cli/issues"
+  },
   "author": "Kenneth Wußmann",
   "license": "MIT",
   "scripts": {
+    "start": "node ./bin/index.js",
     "dev": "ts-node src/cli.ts",
     "format": "yarn prettier . --write",
-    "build": "ncc build"
+    "build": "ncc build -m -o bin/ src/cli.ts"
+  },
+  "bin": {
+    "youtube-subscription-sync": "./bin/index.js",
+    "ytss": "./bin/index.js"
   },
   "dependencies": {
-    "enquirer": "^2.3.6",
     "inquirer": "^8.1.1",
     "koa": "^2.13.1",
     "koa-router": "^10.0.0",

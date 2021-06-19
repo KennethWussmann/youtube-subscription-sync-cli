@@ -3,7 +3,7 @@ name: Build
 on: [push]
 
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -13,6 +13,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "16.x"
-          registry-url: "https://registry.npmjs.org"
       - run: yarn install --forzen-lockfile
+      - run: yarn prettier . --check
       - run: yarn build

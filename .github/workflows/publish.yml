@@ -15,7 +15,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "16.x"
-          registry-url: "https://registry.npmjs.org"
       - run: yarn install --forzen-lockfile
       - name: Publishing CLI
         run: yarn publish --new-version ${{ steps.get_version.outputs.VERSION }}

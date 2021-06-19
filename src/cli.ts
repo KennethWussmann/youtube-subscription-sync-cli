@@ -1,3 +1,4 @@
+#!/bin/user/env node
 import fetch from "node-fetch";
 import inquirer from "inquirer";
 import fs from "fs";
