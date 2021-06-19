@@ -17,6 +17,7 @@ jobs:
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
       - run: yarn install --forzen-lockfile
+      - run: yarn build
       - name: Publishing CLI
         run: yarn publish --new-version ${{ steps.get_version.outputs.VERSION }} --frozen-lockfile --no-git-tag-version
         env:
