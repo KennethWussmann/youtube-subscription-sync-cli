@@ -18,6 +18,6 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: yarn install --forzen-lockfile
       - name: Publishing CLI
-        run: yarn publish --new-version ${{ steps.get_version.outputs.VERSION }}
+        run: yarn publish --new-version ${{ steps.get_version.outputs.VERSION }} --frozen-lockfile --no-git-tag-version
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
