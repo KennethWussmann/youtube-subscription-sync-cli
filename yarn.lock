@@ -610,9 +610,9 @@ only@~0.0.2:
   version "0.0.2"
   resolved "https://registry.npmjs.org/only/-/only-0.0.2.tgz"
 
-open@^8.2.0:
-  version "8.2.0"
-  resolved "https://registry.npmjs.org/open/-/open-8.2.0.tgz"
+open@^8.2.1:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/open/-/open-8.2.1.tgz#82de42da0ccbf429bc12d099dad2e0975e14e8af"
   dependencies:
     define-lazy-prop "^2.0.0"
     is-docker "^2.1.1"
