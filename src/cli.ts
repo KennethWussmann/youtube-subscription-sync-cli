@@ -5,14 +5,16 @@ import fs from "fs";
 import Koa from "koa";
 import Router from "koa-router";
 import open from "open";
-import { v4 as uuid } from "uuid";
+import { randomBytes } from "crypto";
 
 const configFilePath = "./config.json";
 const app = new Koa();
 const router = new Router();
 
+const randomId = () => randomBytes(16).toString("hex");
+
 let applicationState: ApplicationState = "login_source";
-let oauthState = uuid();
+let oauthState = randomId();
 let config: Config;
 let subscriptions: SubscriptionSnippet[] = [];
 
@@ -119,7 +121,7 @@ const start = async () => {
 };
 
 const startLogin = async () => {
-  oauthState = uuid();
+  oauthState = randomId();
   open(
     `${config.authorizationUrl}?client_id=${config.clientId}&redirect_uri=${config.redirectUrl}&response_type=code&scope=${config.scope}&state=${oauthState}`
   );
