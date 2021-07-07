@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@types/inquirer": "^7.3.2",
-    "@types/koa": "^2.13.3",
+    "@types/koa": "^2.13.4",
     "@types/koa-router": "^7.4.2",
     "@types/node": "^15.12.5",
     "@types/node-fetch": "^2.5.10",
