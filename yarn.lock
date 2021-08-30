@@ -151,9 +151,9 @@
   version "8.3.1"
   resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.1.tgz#1a32969cf8f0364b3d8c8af9cc3555b7805df14f"
 
-"@vercel/ncc@^0.28.6":
-  version "0.28.6"
-  resolved "https://registry.npmjs.org/@vercel/ncc/-/ncc-0.28.6.tgz"
+"@vercel/ncc@^0.30.0":
+  version "0.30.0"
+  resolved "https://registry.yarnpkg.com/@vercel/ncc/-/ncc-0.30.0.tgz#e940f5cfe30dfd0b7b30c4d7f9f6f00fcf754577"
 
 accepts@^1.3.5:
   version "1.3.7"
