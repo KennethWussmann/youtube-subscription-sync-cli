@@ -20,7 +20,7 @@
     "ytss": "./bin/index.js"
   },
   "dependencies": {
-    "inquirer": "^8.1.1",
+    "inquirer": "^8.1.5",
     "koa": "^2.13.1",
     "koa-router": "^10.0.0",
     "node-fetch": "^2.6.1",
