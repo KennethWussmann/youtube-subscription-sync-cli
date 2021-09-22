@@ -27,7 +27,7 @@
     "open": "^8.2.1"
   },
   "devDependencies": {
-    "@types/inquirer": "^7.3.2",
+    "@types/inquirer": "^8.1.2",
     "@types/koa": "^2.13.4",
     "@types/koa-router": "^7.4.4",
     "@types/node": "^16.4.3",
