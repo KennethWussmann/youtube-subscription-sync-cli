@@ -105,3 +105,5 @@ dist
 
 config.json
 bin/
+
+subscriptions.txt
