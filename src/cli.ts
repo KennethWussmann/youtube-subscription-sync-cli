@@ -17,6 +17,9 @@ let applicationState: ApplicationState = "login_source";
 let oauthState = randomId();
 let config: Config;
 let subscriptions: SubscriptionSnippet[] = [];
+let action: Action = "sync";
+
+type Action = "sync" | "export";
 
 type ApplicationState = "login_source" | "login_destination";
 
@@ -112,10 +115,34 @@ const promptDestinationLogin = async () => {
   startLogin();
 };
 
+const promptAction = async () =>
+  (
+    (await inquirer.prompt([
+      {
+        type: "list",
+        name: "action",
+        message: "What do you want to do?",
+        choices: [
+          {
+            name: "Sync subscriptions from one account to another",
+            value: "sync",
+          },
+          {
+            name: "Export list of subscribed channel URLs",
+            value: "export",
+          },
+        ],
+      },
+    ])) as { action: Action }
+  ).action;
+
 const start = async () => {
   app.use(router.routes());
   config = await loadOrCreateConfig();
   app.listen(config.port);
+
+  action = await promptAction();
+
   await promptSourceLogin();
   startLogin();
 };
@@ -125,6 +152,20 @@ const startLogin = async () => {
   open(
     `${config.authorizationUrl}?client_id=${config.clientId}&redirect_uri=${config.redirectUrl}&response_type=code&scope=${config.scope}&state=${oauthState}`
   );
+};
+
+const exportSubscriptions = async () => {
+  fs.writeFileSync(
+    "subscriptions.txt",
+    subscriptions
+      .flatMap((subscription) => [
+        `# ${subscription.title}`,
+        `https://youtube.com/channel/${subscription.resourceId.channelId}`,
+      ])
+      .join("\n")
+  );
+  console.log("Wrote subscriptions to file subscriptions.txt");
+  process.exit(0);
 };
 
 const loginSource = async (accessToken: string) => {
@@ -138,7 +179,14 @@ const loginSource = async (accessToken: string) => {
     process.exit(1);
   }
   console.log(`Found ${subscriptions.length} subscriptions.`);
-  await promptDestinationLogin();
+
+  if (action === "sync") {
+    await promptDestinationLogin();
+  } else if (action === "export") {
+    await exportSubscriptions();
+  } else {
+    console.error("Unknown action", action);
+  }
 };
 
 const getAllSubscriptions = async (

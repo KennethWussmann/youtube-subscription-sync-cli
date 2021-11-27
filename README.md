@@ -5,6 +5,11 @@ CLI tool to sync YouTube subscriptions from one account to another.
 Switching to another YouTube account can be annoying when you have to manually subscribe to all the YouTube channels again.
 This small CLI tool guides you to the process of automating this task.
 
+## Features
+
+- Sync subscriptions from one account to another
+- Get a list of subscribed account URLs
+
 ## How it works
 
 You'll be redirected to login with your source YouTube channel. Afterwards the tool will fetch all channels that account is subscribed to.
